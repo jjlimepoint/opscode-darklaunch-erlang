@@ -14,5 +14,5 @@
                   sasl
                  ]},
   {mod, { darklaunch_app, []}},
-  {env, [{config, "/etc/opscode/dark_launch_features.json"}, {reload_time, 10000}]}
+  {env, [{config, "/etc/mintpress-configuration-server/dark_launch_features.json"}, {reload_time, 10000}]}
  ]}.

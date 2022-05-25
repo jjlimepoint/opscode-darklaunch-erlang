@@ -12,12 +12,12 @@
 ensure_accessible_config_test() ->
     error_logger:delete_report_handler(error_logger_tty_h),
     ?assertEqual(ok,
-                 darklaunch_app:ensure_accessible_config("/etc/opscode/dark_launch_features.json")),
+                 darklaunch_app:ensure_accessible_config("/etc/mintpress-configuration-server/dark_launch_features.json")),
     ?assertEqual({error, insufficient_privileges_for_config_file},
-                 darklaunch_app:ensure_accessible_config("/etc/opscode/dorky_lunch_features.json")),
+                 darklaunch_app:ensure_accessible_config("/etc/mintpress-configuration-server/dorky_lunch_features.json")),
     ?assertEqual(ok,
-                 darklaunch_app:ensure_accessible_config("/etc/opscode/file_not_present_writable.json")),
+                 darklaunch_app:ensure_accessible_config("/etc/mintpress-configuration-server/file_not_present_writable.json")),
     ?assertEqual({error, eaccess},
-                 darklaunch_app:ensure_accessible_config("/etc/opscode/file_not_present_unwritable.json")),
+                 darklaunch_app:ensure_accessible_config("/etc/mintpress-configuration-server/file_not_present_unwritable.json")),
     ?assertEqual({error, badarg},
                  darklaunch_app:ensure_accessible_config("/blah.json")).
